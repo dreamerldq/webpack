@@ -23,11 +23,13 @@ export default class EditInput extends React.Component<IProps> {
     })
   }
   onCancel = () => {
+    console.log("quxiao")
     this.setState({
       edit: !this.state.edit,
     })
   }
   onSave = () => {
+    console.log("aaaaa")
     this.setState({
       edit: !this.state.edit,
     }, () => this.props.onSave(this.state.value) )
@@ -49,7 +51,7 @@ export default class EditInput extends React.Component<IProps> {
         </div>
          :
         <div className={styles.editting}>
-          <Input onBlur={this.changeEditState} value={value} onChange={this.onChangeValue}/>
+          <Input value={value} onChange={this.onChangeValue}/>
          <a onClick={this.onSave}><Icon type="check" /></a>
          <a onClick={this.onCancel}><Icon  style={{color: "red"}} type="close" /></a>
         </div>
