@@ -27,7 +27,6 @@ class Login extends React.Component<IProps> {
     })
   }
   render() {
-    console.log("ASSS", CurrentUser)
     const {getFieldDecorator} = this.props.form
     return(
       <React.Fragment>
