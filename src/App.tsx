@@ -30,6 +30,9 @@ export default class App extends React.Component<IProps> {
           </Route>
         )
       }
+      if(route.path === '/'){
+        return <Route key={index} path={route.path} exact={true} component= {route.component}></Route>
+      }
       return(
         <Route key={index} path={route.path} component={route.component}></Route>
       )
@@ -37,6 +40,7 @@ export default class App extends React.Component<IProps> {
   render() {
     const {currentUser: { username, password}} = this.props
     return (
+      <div className={styles.container}> 
         <Router>
           <React.Fragment>
           <Header className={styles.headerContainer}>
@@ -50,6 +54,8 @@ export default class App extends React.Component<IProps> {
           </Footer>
           </React.Fragment>
         </Router>
+      </div>
+        
     )
   }
 }

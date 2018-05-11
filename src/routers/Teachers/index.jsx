@@ -1,10 +1,11 @@
 import * as React from "react"
 import { getTeachers } from "../../HOC/GetTeachers"
 import { Route } from 'react-router';
-const Teachers = ({teacherList}) => {
+const Teachers = ({teacherList, title}) => {
 return(
     <React.Fragment>
          <h1>这是教师列表</h1>
+         {title}
          {teacherList.length === 0 ?
          <span>列表为空</span>:
          <ul>

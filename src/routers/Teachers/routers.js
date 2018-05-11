@@ -1,21 +1,22 @@
 import * as React from "react"
 import components from "./index" 
-import {Route, Switch, Link} from "react-router-dom"
+import {Route, Switch, Link, Redirect} from "react-router-dom"
 const componentsName = Object.keys(components)
-const Teacher = () => {
+const Teacher = (props) => {
     return(
 			<React.Fragment>
 			<ul>
-				{componentsName.map((name) => (
-					<Link to={`/teacherteam/${name}`}>{name}</Link>
+				{componentsName.map((name, index) => (
+					<Link key={index} to={`/teacherteam/${name}`}>{name}</Link>
 				))}
 			</ul>
 				<Switch>
 					{componentsName.map((name, index) => {
 						return(
-							<Route key={index} path={`/teacherteam/${name}`} component={components[name]}></Route>
+							<Route key={index} path={`${props.match.path}/${name}`} component={components[name]}></Route>
 						)
 					})}
+					<Redirect to="/teacherteam/DigitalMediaTechnologyTeam"></Redirect>
 				</Switch>
 			</React.Fragment>
     )

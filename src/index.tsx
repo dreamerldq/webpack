@@ -7,7 +7,7 @@ const MyComponent = () => {
         <CurrentUser.Provider value={{username: "lidanqiu", password: "123"}}>
             <CurrentUser.Consumer>
                 {(user) => (
-                    <App currentUser={user}></App>
+                    <App  currentUser={user}></App>
                 )}
             </CurrentUser.Consumer>
 

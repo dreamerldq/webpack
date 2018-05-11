@@ -37,6 +37,7 @@ module.exports = {
                         namedExport: true,
                         camelCase: true,
                         minimize: true,
+                        importLoaders: 1,
                         localIdentName: "[local]_[hash:base64:5]"
                     }
                     },
