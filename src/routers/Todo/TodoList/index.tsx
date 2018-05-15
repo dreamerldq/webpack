@@ -2,8 +2,9 @@ import * as React from 'react'
 import { Button, Input } from 'antd'
 import { connect } from 'react-redux'
 import { add_todo, remove_todo, toggle_todo } from '../../../Actions/todo'
+import { ITodoList } from '../interface'
 interface IProps {
-  todoList: any,
+  todoList: ITodoList[],
   add_todo: (param: any) => void,
   toggle_todo: (id: number) => void,
   remove_todo: (id: number) => void
@@ -20,7 +21,7 @@ class TodoList extends React.Component<IProps> {
   }
   addTodo = () => {
     const { todoValue } = this.state
-    const param = {
+    const param: ITodoList = {
       id: count++,
       todo: todoValue,
       isComplete: false

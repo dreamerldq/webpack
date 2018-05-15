@@ -1,9 +1,15 @@
-import { createStore, combineReducers } from 'redux'
-import { todo, todoFilter } from './Reducers/todo'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { todo } from './Reducers/todoList/reducer'
+import { todoFilter } from './Reducers/todoFilter/reducer'
+import createSagaMiddleware from 'redux-saga'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { routerMiddleware, push } from 'react-router-redux'
+import rootSaga from './model'
+const sagaMiddleware = createSagaMiddleware()
 const reducers = combineReducers({
   todo: todo,
   todoFilter: todoFilter
 })
-const enhancer = (window as any)['devToolsExtension'] ? (window as any)['devToolsExtension']()(createStore) : createStore;
-const store = enhancer(reducers);
+const store =  createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+sagaMiddleware.run(rootSaga)
 export default store 
