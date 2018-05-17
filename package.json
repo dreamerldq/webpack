@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --open",
     "build": "webpack"
   },
   "peerDependencies": {
@@ -58,6 +58,8 @@
     "redux-actions": "^2.3.2",
     "redux-saga": "^0.16.0",
     "rsuite": "^3.0.2",
+    "rxjs": "^6.1.0",
+    "rxjs-compat": "^6.1.0",
     "ts-loader": "^4.2.0",
     "tslint": "^5.10.0",
     "typescript": "^2.8.3"
