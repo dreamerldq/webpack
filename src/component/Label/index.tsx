@@ -1,9 +1,9 @@
 import * as React from "react"
-interface IProps{
+interface IProps {
   title: string,
   isNeccery: boolean,
 }
-export default (props:IProps) => {
+export default (props: IProps) => {
   const {title, isNeccery = false} = props
   return(
     <div>

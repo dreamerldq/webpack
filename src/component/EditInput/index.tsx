@@ -23,13 +23,11 @@ export default class EditInput extends React.Component<IProps> {
     })
   }
   onCancel = () => {
-    console.log("quxiao")
     this.setState({
       edit: !this.state.edit,
     })
   }
   onSave = () => {
-    console.log("aaaaa")
     this.setState({
       edit: !this.state.edit,
     }, () => this.props.onSave(this.state.value) )

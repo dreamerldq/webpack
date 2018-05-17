@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { Button, Input } from 'antd'
-import { connect } from 'react-redux'
-import { add_todo, remove_todo, toggle_todo } from '../../../Actions/todo'
-import { ITodoList } from '../interface'
+import * as React from "react"
+import { Button, Input } from "antd"
+import { connect } from "react-redux"
+import { add_todo, remove_todo, toggle_todo } from "../../../Actions/todo"
+import { ITodoList } from "../interface"
 interface IProps {
   todoList: ITodoList[],
   add_todo: (param: any) => void,
@@ -11,12 +11,12 @@ interface IProps {
 }
 let count = 0
 class TodoList extends React.Component<IProps> {
-  state={
-    todoValue: ''
+  state = {
+    todoValue: '',
   }
   changeValue = (e: any) => {
     this.setState({
-      todoValue: e.target.value
+      todoValue: e.target.value,
     })
   }
   addTodo = () => {
@@ -24,7 +24,7 @@ class TodoList extends React.Component<IProps> {
     const param: ITodoList = {
       id: count++,
       todo: todoValue,
-      isComplete: false
+      isComplete: false,
     }
     this.props.add_todo(param)
   }
@@ -34,7 +34,7 @@ class TodoList extends React.Component<IProps> {
   toggleTodo = (id: number) => () => {
     this.props.toggle_todo(id)
   }
-  render(){
+  render() {
     return(
       <React.Fragment>
         <Input onChange={this.changeValue}/>TODO
@@ -47,26 +47,26 @@ class TodoList extends React.Component<IProps> {
                    <Button onClick={this.removeTodo(item.id)}>删除</Button>
                    <Button onClick={this.toggleTodo(item.id)}>完成</Button>
               </div>
-             
+
             )
           })}
         </ul>
       </React.Fragment>
     )
   }
-  
+
 }
 const mapStateToProps = (state: any) => {
   const todo = state.todo
   return{
-    todoList: todo.todoList
+    todoList: todo.todoList,
   }
 }
 const mapDispatchToProps = (dispatch: any) => (
   {
     add_todo: (param: any) => dispatch(add_todo(param)),
     remove_todo: (id: number) => dispatch(remove_todo(id)),
-    toggle_todo: (id: number) => dispatch(toggle_todo(id))
+    toggle_todo: (id: number) => dispatch(toggle_todo(id)),
   }
 
 )

@@ -7,9 +7,9 @@ import { routerMiddleware, push } from 'react-router-redux'
 import rootSaga from './model'
 const sagaMiddleware = createSagaMiddleware()
 const reducers = combineReducers({
-  todo: todo,
-  todoFilter: todoFilter
+  todo,
+  todoFilter,
 })
-const store =  createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+const store =  createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)))
 sagaMiddleware.run(rootSaga)
-export default store 
+export default store

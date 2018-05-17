@@ -22,7 +22,7 @@ class Login extends React.Component<IProps> {
           return
         }
       } else {
-        console.log("err")
+        // console.log("err")
       }
     })
   }

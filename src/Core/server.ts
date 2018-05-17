@@ -2,16 +2,16 @@ import axios, {
   AxiosResponse,
   AxiosInstance,
   AxiosRequestConfig,
-} from 'axios';
+} from 'axios'
 
 interface SuccessResponse<T = any> {
-  data: T;
+  data: T
 }
 
 interface ErrorInfo {
-  domain: string;
-  message: string;
-  reason: string;
+  domain: string
+  message: string
+  reason: string
 }
 
 interface FailureResponse {
@@ -19,15 +19,15 @@ interface FailureResponse {
     code: number;
     message: string;
     errors?: ErrorInfo[];
-  };
+  }
 }
 
-type HttpResponse = SuccessResponse | FailureResponse;
+type HttpResponse = SuccessResponse | FailureResponse
 
 const http: AxiosInstance = axios.create({
   baseURL: 'http://47.93.217.181:3000',
   timeout: 600 * 1000,
-});
+})
 
 // http.interceptors.response.use((res: AxiosResponse<HttpResponse>) => {
 //   const result = res.data;
@@ -48,9 +48,9 @@ const http: AxiosInstance = axios.create({
 
 export class HttpService {
   static get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return (http.get(url, config) as Promise<any>);
+    return (http.get(url, config) as Promise<any>)
   }
   static post<T = any>(url: string, body?: AxiosRequestConfig): Promise<T> {
-    return (http.post(url, body) as Promise<any>);
+    return (http.post(url, body) as Promise<any>)
   }
 }

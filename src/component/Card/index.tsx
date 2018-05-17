@@ -7,9 +7,9 @@ interface IProps {
   children?: JSX.Element | JSX.Element[]
 }
 export default class Card extends React.Component<IProps> {
-  render(){
+  render() {
     const { children } = this.props
-    if(Array.isArray(children)){
+    if (Array.isArray(children)) {
       return(
         <div className={styles.container}>
           <Title>{children[0]}</Title>

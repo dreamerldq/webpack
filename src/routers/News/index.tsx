@@ -6,8 +6,8 @@ export default class News extends React.Component {
   render() {
     return(
       <div>
-      <Route exact path="/news" component={NewsList}></Route>
-      <Route path="/news/:id" component={NewsDetail}></Route>
+      <Route exact={true} path="/news" component={NewsList}/>
+      <Route path="/news/:id" component={NewsDetail}/>
       </div>
 
     )

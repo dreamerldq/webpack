@@ -1,5 +1,6 @@
 
-import { ADDTODO, REMOVETODO, TOGGLETODO, ALLTODO, UNCOMPONENTTODO, COMPONENTTODO, CHANGETYPE, FETCHNEWS } from './todos'
+import { ADDTODO, REMOVETODO, TOGGLETODO, ALLTODO, UNCOMPONENTTODO,
+   COMPONENTTODO, CHANGETYPE, FETCHNEWS } from './todos'
 import { createAction } from 'redux-actions'
 const add_todo = createAction(ADDTODO)
 const remove_todo = createAction(REMOVETODO)

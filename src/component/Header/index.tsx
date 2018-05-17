@@ -20,11 +20,11 @@ export class Header extends React.Component {
     return(
       <React.Fragment>
         <Menu
-        mode="horizontal"
-        theme="dark"
-      >
+          mode="horizontal"
+          theme="dark"
+        >
         {this.linkMenu()}
-      </Menu>
+        </Menu>
 
       </React.Fragment>
     )
